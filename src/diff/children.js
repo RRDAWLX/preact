@@ -35,6 +35,8 @@ export function diffChildren(
 	oldDom,
 	isHydrating
 ) {
+	debugger;
+
 	let i, j, oldVNode, childVNode, newDom, firstChildDom, refs;
 
 	// This is a compression of oldParentVNode!=null && oldParentVNode != EMPTY_OBJ && oldParentVNode._children || EMPTY_ARR
@@ -229,6 +231,8 @@ export function diffChildren(
 }
 
 function reorderChildren(childVNode, oldDom, parentDom) {
+	debugger
+	
 	// Note: VNodes in nested suspended trees may be missing _children.
 	let c = childVNode._children;
 	let tmp = 0;
@@ -286,6 +290,8 @@ function placeChild(
 	newDom,
 	oldDom
 ) {
+	debugger;
+
 	let nextDom;
 	if (childVNode._nextDom !== undefined) {
 		// Only Fragments or components that return Fragment like VNodes will

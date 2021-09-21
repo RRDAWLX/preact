@@ -11,6 +11,8 @@ import options from '../options';
  * @param {boolean} hydrate Whether or not we are in hydration mode
  */
 export function diffProps(dom, newProps, oldProps, isSvg, hydrate) {
+	debugger;
+
 	let i;
 
 	for (i in oldProps) {

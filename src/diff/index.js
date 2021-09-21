@@ -33,6 +33,8 @@ export function diff(
 	oldDom,
 	isHydrating
 ) {
+	debugger;
+
 	let tmp,
 		newType = newVNode.type;
 
@@ -51,8 +53,12 @@ export function diff(
 
 	if ((tmp = options._diff)) tmp(newVNode);
 
+	debugger;
+
 	try {
 		outer: if (typeof newType == 'function') {
+			debugger;
+
 			let c, isNew, oldProps, oldState, snapshot, clearProcessingException;
 			let newProps = newVNode.props;
 
@@ -66,11 +72,15 @@ export function diff(
 					: tmp._defaultValue
 				: globalContext;
 
+			debugger;
+
 			// Get component and set it to `c`
 			if (oldVNode._component) {
 				c = newVNode._component = oldVNode._component;
 				clearProcessingException = c._processingException = c._pendingError;
 			} else {
+				debugger;
+
 				// Instantiate the new component
 				if ('prototype' in newType && newType.prototype.render) {
 					// @ts-ignore The check above verifies that newType is suppose to be constructed
@@ -91,6 +101,7 @@ export function diff(
 				c._renderCallbacks = [];
 			}
 
+			debugger;
 			// Invoke getDerivedStateFromProps
 			if (c._nextState == null) {
 				c._nextState = c.state;
@@ -109,6 +120,7 @@ export function diff(
 			oldProps = c.props;
 			oldState = c.state;
 
+			debugger;
 			// Invoke pre-render lifecycle methods
 			if (isNew) {
 				if (
@@ -303,6 +315,8 @@ function diffElementNodes(
 	commitQueue,
 	isHydrating
 ) {
+	debugger;
+
 	let oldProps = oldVNode.props;
 	let newProps = newVNode.props;
 	let nodeType = newVNode.type;
@@ -362,6 +376,8 @@ function diffElementNodes(
 			dom.data = newProps;
 		}
 	} else {
+		debugger;
+
 		// If excessDomChildren was not null, repopulate it with the current element's children:
 		excessDomChildren = excessDomChildren && slice.call(dom.childNodes);
 
@@ -510,5 +526,7 @@ export function unmount(vnode, parentVNode, skipRemove) {
 
 /** The `.render()` method for a PFC backing instance. */
 function doRender(props, state, context) {
+	debugger;
+
 	return this.constructor(props, context);
 }

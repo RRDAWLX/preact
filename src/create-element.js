@@ -12,6 +12,8 @@ let vnodeId = 0;
  * @returns {import('./internal').VNode}
  */
 export function createElement(type, props, children) {
+	debugger;
+
 	let normalizedProps = {},
 		key,
 		ref,
@@ -53,6 +55,8 @@ export function createElement(type, props, children) {
  * @returns {import('./internal').VNode}
  */
 export function createVNode(type, props, key, ref, original) {
+	debugger;
+
 	// V8 seems to be better at detecting type shapes if the object is allocated from the same call site
 	// Do not inline into createElement and coerceToVNode!
 	const vnode = {

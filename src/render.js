@@ -13,6 +13,8 @@ import { slice } from './util';
  * existing DOM tree rooted at `replaceNode`
  */
 export function render(vnode, parentDom, replaceNode) {
+	debugger;
+
 	if (options._root) options._root(vnode, parentDom);
 
 	// We abuse the `replaceNode` parameter in `hydrate()` to signal if we are in
@@ -33,6 +35,8 @@ export function render(vnode, parentDom, replaceNode) {
 		(!isHydrating && replaceNode) ||
 		parentDom
 	)._children = createElement(Fragment, null, [vnode]);
+
+	debugger;
 
 	// List of effects that need to be called after diffing.
 	let commitQueue = [];
